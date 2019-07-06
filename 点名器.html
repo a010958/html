@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点名器</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    #box{
+        width: 500px;
+        height: 300px;
+        background-color:pink;
+        position:fixed;
+        margin-left:25%;
+        margin-top:10%;
+    }
+    #name{
+        width: 350px;
+        height: 200px;
+        background-color:yellowgreen;
+        text-align: center;
+        margin:20px auto;
+        font-size:120px;
+
+    }
+    #start{
+        width: 80px;
+        height: 30px;
+        margin-left:110px;
+        font-size:15px;
+    }
+    #stop{
+        width: 80px;
+        height: 30px;
+        margin-left:110px;
+        font-size:15px;
+    }
+    
+    </style> 
+</head>
+<body>
+    <div id='box'>
+        <div id='name'></div>
+        <button id='start'>START</button>
+        <button id='stop'>stop</button>
+    </div>
+    <script>
+        var names=document.getElementById('name');
+        var starts =document.getElementById('start');
+        var stops = document.getElementById('stop');
+        var into;
+        // 判断是否已经点击开始按秀
+        
+        starts.onclick = function(){
+            if(into !=null) return;
+            into=setInterval(function(){
+                var nm=['黄盖','韩当','张辽','赵云','关羽','刘备','曹操','黄忠','张飞','大乔','小乔','貂蝉',]
+                // 随即函数生成的随即书作为的索引下表从数据中取值
+                names.innerHTML = nm[rand(0,nm.length-1)];         
+            },100)
+         };
+         stops.onclick = function(){
+             clearInterval(into);
+             into = null;
+         }
+        //  随即数函数
+         function rand(x,y){
+             return Math.floor(Math.random()*(y-x)+x)
+         }
+    </script>
+</body>
+</html>
