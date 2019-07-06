@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>填充</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 40px;
+            border:1px solid red;
+            margin:200px auto;
+        }
+        #box2{
+            width: 0;
+            height: 40px;
+            background-color:green;
+            text-align: right;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id='box'>
+        <div id='box2'></div>
+    </div>
+    <script>               
+        var box = document.getElementById('box');
+        var box2 = document.getElementById('box2');
+        var step =1;
+        var into =setInterval(function(){
+            var w = box2.offsetWidth;
+            var nw = w+step;
+            var bai = nw/box.offsetWidth;
+            box2.innerHTML=Math.floor(bai*100)+"%";
+            if (nw>=box.offsetWidth){
+                clearInterval(into);
+            }
+            box2.style.width = nw+'px';
+
+        },50)
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>键盘事件</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background:green;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+     var T=0;
+     var L=0;
+
+    // 键盘按下事件 keydown键盘按下触发
+    $(window).keydown(function(e){
+        // a 65 s 83 d 68 w 87
+        // console.log(e.keyCode);
+        var stp= e.keyCode;
+        //定义元素一次移动的位置
+        
+
+        // 判断当前按下的时哪个键
+        if(stp==65){
+            console.log('1')
+        //   设置一次移动多少
+           T-=5;
+           $('div').css('left',T+'px');
+            // 你按下了 a 让元素左移动
+        }else if(stp==83){
+            L+=5
+            $('div').css('top',L+'px');
+            // 你按下了s，让元素向下移动
+        }else if(stp==68){
+            T+=5;
+            $('div').css('left',T+'px');
+            // 你按下了D，让元素向右移动
+        }else if(stp==87){
+            L-=5;
+            $('div').css('top',L+'px');
+            //你按下了w,让元素向上移动 
+        }
+    })
+    </script>
+</body>
+</html>

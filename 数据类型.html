@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1,数据类型——undefined
+        var myvar = undefined;
+        //检测数据类型 
+        console.log(typeof(myvar))
+        // 输出变量的值
+        console.log(myvar)
+        // undefined类型标识声明了变量，不需要直接设置undefined
+    //   字符串 连续的多个字符
+        // 字符标识单个文字 你，我，A,B,C,1,2,<i class="fas fa-signal-3    "></i>
+        //2。数据类型——string
+        // 声明字符串
+        var str1 = "在听课的都是爱学习的，没事别惨呼直播什么的行业的" 
+        console.log(typeof(str1))
+        console.log(str1)
+        // 声明字符串（单引号）
+        var str2 = '因为直播行业就是青春反，过几年就干不动了'
+        console.log(typeof(str))
+        console.log(str2)
+        // 字符串的变量解析
+        var a = '直播干不长'
+        var b = '可以学编程'
+        var c = '编程可以到死！a'
+        console.log(c)
+        // 转译字符的问题
+        // 输出一个回车字符
+        console.log('我喜欢\n\t小萝莉')
+        // 数据类型-number 数值类型
+        // 1,整型->就是整数
+        var no1 =250
+        console.log(typeof(no1))
+        console.log(typeof no1)
+        console.log(no1)
+        // 方法2：八进 制   只能使用0-7八个数字
+        
+        var no2 = 0777 
+        console.log(typeof no2)
+        console.log(no2)
+        // 方法3：s十六进制声明整数，字母不区分大小写 0-9 a-f
+        var no3 = 0x12af
+        console.log(typeof no3)
+        console.log(no3)
+        
+        // 2。浮点型 就是小数 科学计数法
+        var no5 = 314e2 
+        // 垫带314 *10的2次发
+        console.log(typeof no5)
+        console.log(no5)
+        // 奇怪的写法；
+        console.log(.5)
+        console.log(5.)
+
+        // 3，NAN:NOT a Number 不是一个数字（任何时候都离NaN远一点）
+        var no6 = NaN
+        console.log(typeof no6)
+        console.log(no6)
+        // 运算错误
+        var no7 = 1 - '你大爷'
+        console.log(typeof no7)
+        console.log(no7)
+        // 判断
+        console.log(NaN == NaN)
+         console.log(NaN+1)
+        //  NaN只用检测功能
+        var no8 = 9;
+        result = isNaN(no8)
+        console.log(typeof result)
+        console.log(result)
+        // 数据类型-boolean 布尔类型 计算机专用数据类型
+        // 只有两个数据：true false
+        // true 表示肯定的答案 ，真的，时的，有，对等
+        // false 表示否定的答案 假的，错误的，没有
+        // 主要由程序判断获得
+        console.log(5>3)
+        console.log(5>10)
+        // 自己定义布尔值，千万别给布尔值
+        // 数据类型 -function 函数类型
+        // 定义一个函数呢？
+        function paoniu(){
+            console.log('姑娘，这块砖头时你掉的的吗？')
+        }
+            console.log(typeof paoniu)
+            console.log(paoniu)
+        //6 数据类型 -- 对象类型
+        // 创建
+         var obj = new Object();  //创建一个对象
+         console.log(obj)
+        //  
+        console.log(typeof obj)
+         
+
+
+    </script>
+    <marquee behavior="" direction="">什么是图灵，</marquee>
+    <marquee width = "50%">什么是图灵</marquee>
+    <marquee width = "50%" >
+        <font color = "red">
+            什么是图灵
+        </font>
+
+    </marquee>
+    <marquee behavior="" direction=""></marquee>
+</body>
+</html>

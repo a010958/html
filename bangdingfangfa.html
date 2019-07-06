@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <style>
+    #item1{
+        width:200px;
+        height: 200px;
+        background:red;
+    }
+    </style>
+</head>
+
+<body>
+    <script>
+        console.log($('#item1'));
+        $(document).ready(function(){
+            console.log($('#item1'));
+        })
+        $(function(){
+            console.log($('#item1'));
+        })
+    </script>
+    <div id="item1"></div>
+        <script>
+         // 基本绑定方法
+        // $('#item1').click(function(){
+        //     console.log('基本的时间绑定方法')
+        // })
+        // bind 方法绑定 
+        $("#item1").bind('click',function(){
+            console.log("bind的绑定方法")
+        })
+        // $('#item1').dblclick(function(){
+        //     console.log("双击绑定方法")
+        // })
+         
+         /* 接触事件绑定  */
+        //  注意 如果不制定解除的事件，那么就会解除所有的事件
+        // 如果解除制定的事件那就给他制定的事件
+         $('#item1').unbind();
+        </script>
+</body>
+</html>
