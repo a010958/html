@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画一</title>
+    <style>
+        #outer{
+            width:200px;
+            height:200px;
+            position:absolute;
+            right:0;
+            bottom:0;
+            border:1px solid red;
+            overflow:hidden;
+        }
+        #anniu{
+            height:20px;
+            width:200px;
+            position:absolute;
+            right:0;
+            background-color:#123;
+        }
+        #zfx{
+            height:180px;
+            width:200px;
+            position:absolute;
+            right:0;
+            bottom:0;
+            background:url(./图片/1.png);
+            
+        }
+        button{
+            position:absolute;
+            right:0;
+            z-index:10;
+        }
+    </style>
+</head>
+<body>
+    
+        <div id ="outer">
+            <div id="anniu">
+                <button id="button">向下</button>
+                <button style="display:none" id ="bt">向上</button>
+            </div>
+            <div id="zfx"></div>
+        </div>
+
+</body>
+</html>
+<script>
+    (function(){
+        var outer =document.getElementById("outer")
+        var anniu = document.getElementById("anniu");
+        var zfx = document.getElementById("zfx");
+        var button =document.getElementById("button");
+        var bt = document.getElementById("bt")
+        var is_animate = false;
+        button.onclick =function(){
+          if(is_animate){
+              return false;
+          }
+          var height =180;
+          var auto = setInterval(function(){
+                is_animate = true
+                outer.style.height =(height-1)+"px"
+                height--
+                if(height<=20){
+                clearInterval(auto);
+                    bt.style.display ="block"
+                    button.style.display="none"
+                    return false;
+            }
+            },50)
+        
+
+        }
+        bt.onclick =function(){
+    
+           var height =20;
+           
+            var up = setInterval(function(){
+               
+                outer.style.height =(height+1)+"px";
+                height =parseInt(outer.style.height);
+                if(height>=180){
+                    clearInterval(up);
+                    button.style.display ="block";
+                    bt.style.display ="none";
+                    is_animate =false;
+                }
+            },50)
+        }
+
+    })()
+</script>

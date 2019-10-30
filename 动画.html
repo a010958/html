@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #demo{
+            height:117px;
+            width:100%;
+          
+            position:absolute;
+           
+            bottom:0;
+            right:0;
+        }
+
+        #img{
+            width:100%;
+            height:117px;
+            position:absolute;
+           
+            bottom:0;
+            right:0;
+          
+        }
+       
+        #bg{
+            width:100%;
+            height:117px;
+            position:absolute;
+            z-index:0;
+            background-color: red;
+        }
+        #yx{
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background-color: blue;
+            position:absolute;
+            left:0;
+            bottom:0;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id = "demo">
+        <div id="img" >
+            
+            <div id="bg" ></div>
+            <div id="yx" style="display:none"> </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    (function(){
+        var bg = document.getElementById("bg");
+        var yx = document.getElementById("yx");
+       
+        bg.onclick = function(){
+            bg.style.display="none";
+            yx.style.display="block"
+        }
+    
+        yx.onclick = function(){
+            bg.style.display="block";
+            yx.style.display ="none";
+        }
+    
+    })()
+
+    
+</script>
